@@ -9,4 +9,7 @@ class Examen
   def get_pregunta()
     return @pregunta
   end
+  def get_respuestas()
+    return @respuestas
+  end
 end

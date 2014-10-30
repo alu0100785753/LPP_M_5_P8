@@ -20,8 +20,8 @@ describe Examen do
 	        @pregunta.should eq("\nCual es el resultado de sumar 2 y 5?")
 	    end
 	    it "get_respuesta" do
-	        @respuesta=@ex.get_respuesta
-	        @respuesta.should eq([4,5,6, "ninguna de las anteriores"])
+	        @respuestas=@ex.get_respuestas
+	        @respuestas.should eq([4,5,6, "ninguna de las anteriores"])
 	    end
 	end
 	  
