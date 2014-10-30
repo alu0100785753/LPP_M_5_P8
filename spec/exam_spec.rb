@@ -24,5 +24,10 @@ describe Examen do
 	        @respuestas.should eq([4,5,6, "ninguna de las anteriores"])
 	    end
 	end
+	describe "mostrar pregunta y posibles respuestas por consola" do
+	    it "mostrar_todo" do
+	        @ex.mostrar_todo
+	    end
+	end
 	  
 end
