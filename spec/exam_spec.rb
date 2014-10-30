@@ -16,8 +16,12 @@ describe Examen do
 	
 	describe "funciones get" do
 	    it "get_pregunta" do
-	        @pregunta=@ex.get_pregunta()
+	        @pregunta=@ex.get_pregunta
 	        @pregunta.should eq("\nCual es el resultado de sumar 2 y 5?")
+	    end
+	    it "get_respuesta" do
+	        @respuesta=@ex.get_respuesta
+	        @respuesta.should eq([4,5,6, "ninguna de las anteriores"])
 	    end
 	end
 	  
