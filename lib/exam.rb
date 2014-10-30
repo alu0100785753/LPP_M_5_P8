@@ -12,4 +12,10 @@ class Examen
   def get_respuestas()
     return @respuestas
   end
+  def mostrar_todo()
+    puts @pregunta
+      for i in @respuestas
+      puts i
+      end
+  end
 end
