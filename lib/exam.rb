@@ -6,7 +6,7 @@ class Examen
     @pregunta=pre
     @respuestas=resp
   end
-  def mostrar_pregunta()
-    puts "#{@preg}"
+  def get_pregunta()
+    return @pregunta
   end
 end
