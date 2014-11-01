@@ -19,3 +19,12 @@ class Examen
       end
   end
 end
+
+# create a Struct with :value and :next
+Node = Struct.new(:value, :next)
+
+class List
+  
+  
+  
+end

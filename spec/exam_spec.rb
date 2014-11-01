@@ -31,3 +31,9 @@ describe Examen do
 	end
 	  
 end
+
+describe List do
+#	before :all do
+#		@lista= List.new()
+	
+end
