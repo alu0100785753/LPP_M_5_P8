@@ -1,4 +1,4 @@
-class Vof
+class Vof < Examen
     attr_accessor :pregunta, :respuestas
     def initialize(pre)
         @pregunta=pre
