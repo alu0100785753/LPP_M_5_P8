@@ -89,6 +89,12 @@ describe Examen do
 		        @respuestas.should eq(['verdadero', 'falso'])
 		    end
 		end
+		
+		describe "mostrar pregunta y posibles respuestas por consola" do
+		    it "mostrar_todo" do
+		        @verofa.mostrar_todo
+		    end
+		end
   	
   end
   
