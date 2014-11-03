@@ -2,38 +2,52 @@ require 'spec_helper'
 require 'exam'
 
 describe Examen do
-   before :all do
-     @ex= Examen.new("\nCual es el resultado de sumar 2 y 5?",[4,5,6, "ninguna de las anteriores"])
-   end
-   describe "comprobar pregunta y respuestas hecha" do
-        it "la pregunta esta hecha?" do
-			@ex.pregunta.should eq("\nCual es el resultado de sumar 2 y 5?")
-        end
-		it "Se han creado las respuestas?" do
-			@ex.respuestas.should eq([4,5,6, "ninguna de las anteriores"])
+	
+	describe "Simple_Selection" do 
+	   before :all do
+	     @ex= Examen.new("\nCual es el resultado de sumar 2 y 5?",[4,5,6, "ninguna de las anteriores"])
+	   end
+	   describe "comprobar pregunta y respuestas hecha" do
+	        it "la pregunta esta hecha?" do
+				@ex.pregunta.should eq("\nCual es el resultado de sumar 2 y 5?")
+	        end
+			it "Se han creado las respuestas?" do
+				@ex.respuestas.should eq([4,5,6, "ninguna de las anteriores"])
+			end
+		end
+		
+		describe "funciones get" do
+		    it "get_pregunta" do
+		        @pregunta=@ex.get_pregunta
+		        @pregunta.should eq("\nCual es el resultado de sumar 2 y 5?")
+		    end
+		    it "get_respuesta" do
+		        @respuestas=@ex.get_respuestas
+		        @respuestas.should eq([4,5,6, "ninguna de las anteriores"])
+		    end
+		end
+		describe "mostrar pregunta y posibles respuestas por consola" do
+		    it "mostrar_todo" do
+		        @ex.mostrar_todo
+		    end
 		end
 	end
 	
-	describe "funciones get" do
-	    it "get_pregunta" do
-	        @pregunta=@ex.get_pregunta
-	        @pregunta.should eq("\nCual es el resultado de sumar 2 y 5?")
-	    end
-	    it "get_respuesta" do
-	        @respuestas=@ex.get_respuestas
-	        @respuestas.should eq([4,5,6, "ninguna de las anteriores"])
-	    end
+	describe Node do
+	  it "Debe existir un nodo" do	
+	     @nodo = Node.new(2,3)
+    end
 	end
-	describe "mostrar pregunta y posibles respuestas por consola" do
-	    it "mostrar_todo" do
-	        @ex.mostrar_todo
-	    end
-	end
-	  
-end
 
-describe List do
-#	before :all do
-#		@lista= List.new()
-	
+  describe List do
+    it "Debe existir una lista" do	
+	     @lista = List.new
+    end
+    
+    it "se puede insertar un elemento en la lista" do
+    	@lista.push(6)
+    end
+    
+  end
+  
 end
