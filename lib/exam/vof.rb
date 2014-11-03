@@ -1,4 +1,5 @@
 class Vof
+    attr_accessor :pregunta, :respuestas
     def initialize(pre)
         @pregunta=pre
         @respuestas=['verdadero','falso']

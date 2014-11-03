@@ -73,7 +73,13 @@ describe Examen do
 	        it "la pregunta esta hecha?" do
 					@verofa.pregunta.should eq("\n Es apropiado que una clase Tablero herede de una clase Juego")
 	        end
+	        
+	        it "Se han creado las respuestas?" do
+				@verofa.respuestas.should eq(['verdadero', 'falso'])
+			end
 	   end
+	   
+	   
   	
   end
   
