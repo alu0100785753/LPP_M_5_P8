@@ -79,7 +79,16 @@ describe Examen do
 			end
 	   end
 	   
-	   
+	   describe "funciones get" do
+		    it "get_pregunta" do
+		        @pregunta=@verofa.get_pregunta
+		        @pregunta.should eq("\n Es apropiado que una clase Tablero herede de una clase Juego")
+		    end
+		    it "get_respuesta" do
+		        @respuestas=@verofa.get_respuestas
+		        @respuestas.should eq(['verdadero', 'falso'])
+		    end
+		end
   	
   end
   
