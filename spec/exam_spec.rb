@@ -45,20 +45,22 @@ describe Examen do
   	before :all do
   		@lista = List.new
   	end
-    it "Debe existir una lista" do	
-	     @lista = List.new
+  	describe "existe una lista" do
+	    it "Debe existir una lista" do	
+		     @lista = List.new
+	    end
     end
-    
-    it "se puede insertar un elemento en la lista" do
-    	@lista.push(6)
-    	@lista.push(7)
-    end
-    
-    it "se puede extraer un elemento de la lista" do
-    puts	@lista.pop
-    puts @lista.pop
-    end
-  end
+    describe "se puede insertar y extraer" do
+	    it "se puede insertar un elemento en la lista" do
+	    	@lista.push(6)
+	    	@lista.push(7)
+    	end
+	    it "se puede extraer un elemento de la lista" do
+	    puts	@lista.pop
+	    puts @lista.pop
+	    end
+	end
+ end
   
   
   describe Vof do
@@ -67,6 +69,11 @@ describe Examen do
 	     @verofa= Vof.new("\n Es apropiado que una clase Tablero herede de una clase Juego")
 	   end
 	   
+	   describe "comprobar pregunta y respuestas hecha" do
+	        it "la pregunta esta hecha?" do
+					@verofa.pregunta.should eq("\n Es apropiado que una clase Tablero herede de una clase Juego")
+	        end
+	   end
   	
   end
   
