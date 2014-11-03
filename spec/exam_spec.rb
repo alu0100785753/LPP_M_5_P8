@@ -40,6 +40,9 @@ describe Examen do
 	end
 
   describe List do
+  	before :all do
+  		@lista = List.new
+  	end
     it "Debe existir una lista" do	
 	     @lista = List.new
     end
@@ -48,6 +51,9 @@ describe Examen do
     	@lista.push(6)
     end
     
+    it "se puede extraer un elemento de la lista" do
+    	@lista.pop
+    end
   end
   
 end
