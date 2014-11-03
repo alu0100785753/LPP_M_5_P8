@@ -8,9 +8,9 @@ class List
     @ini=Node.new(nil,nil)
   end
   def push(elemento)
-    if @ini.value== nil
+    if @ini.value == nil
       @ini.value=  elemento
-    else
+    elsif
       nuevo= Node.new(elemento,@ini)
       @ini= nuevo
     end

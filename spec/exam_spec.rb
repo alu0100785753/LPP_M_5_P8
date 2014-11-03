@@ -33,12 +33,14 @@ describe Examen do
 		end
 	end
 	
+	
 	describe Node do
 	  it "Debe existir un nodo" do	
 	     @nodo = Node.new(2,3)
     end
 	end
 
+  
   describe List do
   	before :all do
   		@lista = List.new
@@ -56,6 +58,16 @@ describe Examen do
     puts	@lista.pop
     puts @lista.pop
     end
+  end
+  
+  
+  describe Vof do
+  	
+  	before :all do
+	     @verofa= Vof.new("\n Es apropiado que una clase Tablero herede de una clase Juego")
+	   end
+	   
+  	
   end
   
 end
