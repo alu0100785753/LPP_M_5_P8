@@ -49,10 +49,12 @@ describe Examen do
     
     it "se puede insertar un elemento en la lista" do
     	@lista.push(6)
+    	@lista.push(7)
     end
     
     it "se puede extraer un elemento de la lista" do
-    	@lista.pop
+    puts	@lista.pop
+    puts @lista.pop
     end
   end
   

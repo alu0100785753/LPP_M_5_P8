@@ -10,11 +10,15 @@ class List
   def push(elemento)
     if @ini.value== nil
       @ini.value=  elemento
-    elsif
-      @nuevo= Node.new(elemento,@ini)
-      @ini= @nuevo
+    else
+      nuevo= Node.new(elemento,@ini)
+      @ini= nuevo
     end
-        
   end
-  
+  def pop
+    aux= Node.new(nil,nil)
+    aux=@ini
+    @ini=aux.next
+    return aux.value
+  end  
 end
