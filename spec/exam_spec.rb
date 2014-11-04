@@ -61,7 +61,7 @@ describe Examen do
 	    end
 	end
  end
-  
+
   
   describe Vof do
   	
@@ -70,13 +70,12 @@ describe Examen do
 	   end
 	   
 	   describe "comprobar pregunta y respuestas hecha" do
-	        it "la pregunta esta hecha?" do
+	      it "la pregunta esta hecha?" do
 					@verofa.pregunta.should eq("\n Es apropiado que una clase Tablero herede de una clase Juego")
-	        end
-	        
-	        it "Se han creado las respuestas?" do
-				@verofa.respuestas.should eq(['verdadero', 'falso'])
-			end
+	      end
+	      it "Se han creado las respuestas?" do
+					@verofa.respuestas.should eq(['verdadero', 'falso'])
+				end
 	   end
 	   
 	   describe "funciones get" do
@@ -95,7 +94,24 @@ describe Examen do
 		        @verofa.mostrar_todo
 		    end
 		end
-  	
   end
+
+
+	describe Doble_list do
+		
+		before :all do
+			@doble_list = Doble_list.new
+		end
+		
+		describe "creando doble_list" do
+			@doble_lista= Doble_list.new
+		end
+			
+			
+		
+	end
+
+
+
   
 end
