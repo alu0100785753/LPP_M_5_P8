@@ -134,6 +134,8 @@ end
 			it "funciona el pop_ini" do
 				puts @doble_list.pop_ini
 			end
-		
+			it "funciona el pop_fin" do
+				puts @doble_list.pop_fin
+			end	
 		end
 	end
