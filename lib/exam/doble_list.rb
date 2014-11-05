@@ -46,4 +46,10 @@ class Doble_list
       aux.value
   end
   
+   def pop_fin
+      aux=@fin
+      @fin=aux.prev
+      aux.value
+  end
+  
 end
