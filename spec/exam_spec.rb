@@ -123,6 +123,10 @@ end
 			it "push por el principio" do
 				@doble_list.push_ini(1)
 			end
+			it "push por el final" do
+				@doble_list.push_fin(2)
+
+			end
 			
 		end
 	end
