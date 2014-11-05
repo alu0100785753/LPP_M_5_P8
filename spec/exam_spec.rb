@@ -119,5 +119,10 @@ end
 				@doble_list= Doble_list.new
 			end
 		end
-	
+	describe "fucionan los push" do
+			it "push por el principio" do
+				@doble_list.push_ini(1)
+			end
+			
+		end
 	end
