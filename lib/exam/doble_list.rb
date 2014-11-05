@@ -38,4 +38,12 @@ class Doble_list
       @fin=nuevo
     end
   end
+  
+  def pop_ini
+    
+      aux=@ini
+      @ini=aux.next
+      aux.value
+  end
+  
 end
