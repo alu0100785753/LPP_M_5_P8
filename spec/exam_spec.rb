@@ -105,6 +105,8 @@ end
 		
 		before :all do
 			@doble_list = Doble_list.new
+				@doble_list.push_ini(2)
+					@doble_list.push_ini(3)
 
 		end
 		
@@ -129,6 +131,7 @@ end
 			end
 			
 		end
+		
 		
 		describe "funcionan los pop" do
 			it "funciona el pop_ini" do

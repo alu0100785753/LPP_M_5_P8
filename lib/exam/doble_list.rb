@@ -50,6 +50,6 @@ class Doble_list
       aux=@fin
       @fin=aux.prev
       aux.value
-  end
+   end
   
 end
