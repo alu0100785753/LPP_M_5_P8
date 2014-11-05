@@ -8,5 +8,14 @@ class Doble_list
     @ini=nil
     @fin=nil
   end
-  
+  def push_ini(elemento)
+    if lista_vacia==true
+      @ini= Node2.new(elemento,nil,nil)
+      @fin= @ini
+    elsif
+      nuevo= Node2.new(elemento,@ini,nil)
+      #@ini.prev= nuevo
+      @ini=nuevo
+    end
+  end
 end
