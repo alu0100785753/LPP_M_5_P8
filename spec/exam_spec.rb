@@ -129,4 +129,11 @@ end
 			end
 			
 		end
+		
+		describe "funcionan los pop" do
+			it "funciona el pop_ini" do
+				puts @doble_list.pop_ini
+			end
+		
+		end
 	end
