@@ -27,4 +27,15 @@ class Doble_list
       @ini=nuevo
     end
   end
+  def push_fin(elemento)
+
+    if lista_vacia==true
+      @fin= Node2.new(elemento,nil,nil)
+      @ini= @fin
+    elsif
+      nuevo= Node2.new(elemento, nil, @fin)
+      #@fin.next= nuevo
+      @fin=nuevo
+    end
+  end
 end
