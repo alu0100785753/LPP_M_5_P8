@@ -44,6 +44,8 @@ describe Examen do
   describe List do
   	before :all do
   		@lista = List.new
+  		@lista.push(1)
+  		@lista.push(2)
   	end
   	describe "existe una lista" do
 	    it "Debe existir una lista" do	
@@ -56,7 +58,7 @@ describe Examen do
 	    	@lista.push(7)
     	end
 	    it "se puede extraer un elemento de la lista" do
-	    puts	@lista.pop
+	    puts @lista.pop
 	    puts @lista.pop
 	    end
 	end
@@ -96,22 +98,26 @@ describe Examen do
 		end
   end
 
+end
 
 	describe Doble_list do
 		
+		
 		before :all do
 			@doble_list = Doble_list.new
+
 		end
+		
+	describe Node2 do
+	  it "Debe existir un nodo" do	
+	     @nodo2 = Node2.new(2,3,1)
+    	end
+    end
 		
 		describe "creando doble_list" do
-			@doble_lista= Doble_list.new
+			it "se crea la lista" do
+				@doble_list= Doble_list.new
+			end
 		end
-			
-			
-		
+	
 	end
-
-
-
-  
-end
