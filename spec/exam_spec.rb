@@ -41,28 +41,28 @@ describe Examen do
 	end
 
   
-  describe List do
-  	before :all do
-  		@lista = List.new
-  		@lista.push(1)
-  		@lista.push(2)
-  	end
-  	describe "existe una lista" do
-	    it "Debe existir una lista" do	
-		     @lista = List.new
-	    end
-    end
-    describe "se puede insertar y extraer" do
-	    it "se puede insertar un elemento en la lista" do
-	    	@lista.push(6)
-	    	@lista.push(7)
-    	end
-	    it "se puede extraer un elemento de la lista" do
-	    puts @lista.pop
-	    puts @lista.pop
-	    end
-	end
- end
+ # describe List do
+ # 	before :all do
+ # 		@lista = List.new
+ # 		@lista.push(1)
+ # 		@lista.push(2)
+ # 	end
+  #	describe "existe una lista" do
+#	    it "Debe existir una lista" do	
+#		     @lista = List.new
+#	    end
+ #   end
+ #   describe "se puede insertar y extraer" do
+#	    it "se puede insertar un elemento en la lista" do
+#	    	@lista.push(6)
+#	    	@lista.push(7)
+ #   	end
+#	    it "se puede extraer un elemento de la lista" do
+#	    puts @lista.pop
+#	    puts @lista.pop
+#	    end
+#	end
+ #end
 
   
   describe Vof do
@@ -141,4 +141,25 @@ end
 				puts @doble_list.pop_fin
 			end	
 		end
-	end
+
+end
+	describe Examen do
+
+		before :all do
+			@preg1= Examen.new("\nCual es el resultado de sumar 2 y 5?",[4,5,6, "ninguna de las anteriores"])
+			@preg2= Examen.new("\nCual es el resultado de sumar 2 y 5?",[4,5,6, "ninguna de las anteriores"])
+			@preg3= Examen.new("\nCual es el resultado de sumar 2 y 5?",[4,5,6, "ninguna de las anteriores"])
+			@preg1.dificultad=2
+			@preg2.dificultad=4
+			@preg3.dificultad=2
+		end
+		
+		describe "comparando preguntas" do
+			it "pregunta igual" do
+				puts "hola"
+				puts @preg1.dificultad
+				puts @preg1<=>@preg3 
+			end
+		end
+	
+end
