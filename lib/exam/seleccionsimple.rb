@@ -1,5 +1,5 @@
 class Examen
-  include Comparable
+  #include Comparable
   attr_accessor :pregunta, :respuestas, :dificultad
   def initialize(pre, resp)
     @pregunta=pre

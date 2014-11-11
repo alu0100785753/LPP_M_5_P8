@@ -150,15 +150,14 @@ end
 			@preg2= Examen.new("\nCual es el resultado de sumar 2 y 5?",[4,5,6, "ninguna de las anteriores"])
 			@preg3= Examen.new("\nCual es el resultado de sumar 2 y 5?",[4,5,6, "ninguna de las anteriores"])
 			@preg1.dificultad=2
-			@preg2.dificultad=4
-			@preg3.dificultad=2
+			@preg2.dificultad=2
+			@preg3.dificultad=4
 		end
-		
 		describe "comparando preguntas" do
 			it "pregunta igual" do
-				puts "hola"
-				puts @preg1.dificultad
-				puts @preg1<=>@preg3 
+				puts "debe dar cero: "
+				#puts @preg1.dificultad
+				puts @preg1<=>@preg2 
 			end
 		end
 	
