@@ -1,14 +1,14 @@
 class Examen
-  #include Comparable
+  include Comparable
   attr_accessor :pregunta, :respuestas, :dificultad
   def initialize(pre, resp)
     @pregunta=pre
     @respuestas=resp
   end
- # def <=>(other)
+  def <=>(other)
     #return nil unless other.instance_of? Examen
-#    @dificultad<=>other.dificultad
- # end
+    @dificultad<=>other.dificultad
+  end
   def get_pregunta()
     return @pregunta
   end
