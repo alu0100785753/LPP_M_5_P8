@@ -147,17 +147,24 @@ end
 
 		before :all do
 			@preg1= Examen.new("\nCual es el resultado de sumar 2 y 5?",[4,5,6, "ninguna de las anteriores"])
-			@preg2= Examen.new("\nCual es el resultado de sumar 2 y 5?",[4,5,6, "ninguna de las anteriores"])
-			@preg3= Examen.new("\nCual es el resultado de sumar 2 y 5?",[4,5,6, "ninguna de las anteriores"])
+			@preg2= Examen.new("\nCual es el resultado de sumar 5 y 2?",[4,5,6, "ninguna de las anteriores"])
+			@preg3= Vof.new("\nEs 7 el resultado de sumar 2 y 5?")
 			@preg1.dificultad=2
 			@preg2.dificultad=2
-			@preg3.dificultad=4
+			@preg3.dificultad=1
 		end
 		describe "comparando preguntas" do
 			it "pregunta igual" do
-				puts "debe dar cero: "
-				#puts @preg1.dificultad
+				print "debe dar 0: "
 				puts @preg1<=>@preg2 
+			end
+			it "pregunta menor" do
+				print "debe dar -1: "
+				puts @preg3<=>@preg2 
+			end
+			it "pregunta mayor" do
+				print "debe dar +1: "
+				puts @preg2<=>@preg1 
 			end
 		end
 	

@@ -6,7 +6,6 @@ class Examen
     @respuestas=resp
   end
   def <=>(other)
-    #return nil unless other.instance_of? Examen
     @dificultad<=>other.dificultad
   end
   def get_pregunta()
