@@ -178,5 +178,12 @@ end
 				@lista.push_ini(4)
 			end
 		end
+		
+		describe "Probando el enumerable" do
+				it "funciona enumerable" do
+					puts "la lista es: "
+					@lista.each{|nodo| puts nodo.value}
+				end
+			end
 	
 end
