@@ -58,4 +58,13 @@ class Doble_list
       @fin=aux.prev
       aux.value
    end
+   def each
+     yield @ini
+     nodo=@ini
+     while (nodo != @fin)
+     nodo=nodo.next
+     yield nodo
+     end
+   end
+   
 end

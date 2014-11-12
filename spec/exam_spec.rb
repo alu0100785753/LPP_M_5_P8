@@ -177,7 +177,6 @@ end
 				@lista.push_ini(3)
 				@lista.push_ini(4)
 			end
-		end
 		
 		describe "Probando el enumerable" do
 				it "funciona enumerable" do
@@ -185,5 +184,5 @@ end
 					@lista.each{|nodo| puts nodo.value}
 				end
 			end
-	
+		end
 end
