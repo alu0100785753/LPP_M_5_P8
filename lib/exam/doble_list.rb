@@ -1,8 +1,15 @@
 # create a Struct with :value and :next
 Node2 = Struct.new(:value, :next, :prev)
 
+class Node2
+  include Comparable
+  def <=>(other)
+    value<=>other.value
+  end
+end
+
 class Doble_list
-  
+  include Enumerable
   attr_accessor :ini, :fin
   def initialize
     @ini=nil
@@ -51,5 +58,4 @@ class Doble_list
       @fin=aux.prev
       aux.value
    end
-  
 end

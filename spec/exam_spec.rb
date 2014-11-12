@@ -164,7 +164,18 @@ end
 			end
 			it "pregunta mayor" do
 				print "debe dar +1: "
-				puts @preg2<=>@preg1 
+				puts @preg2<=>@preg3
+			end
+		end
+		
+		describe Doble_list do
+			
+			before :all do
+				@lista= Doble_list.new
+				@lista.push_ini(1)
+				@lista.push_ini(2)
+				@lista.push_ini(3)
+				@lista.push_ini(4)
 			end
 		end
 	
