@@ -1,12 +1,6 @@
 # create a Struct with :value and :next
 Node2 = Struct.new(:value, :next, :prev)
 
-class Node2
-  include Comparable
-  def <=>(other)
-    value<=>other.value
-  end
-end
 
 class Doble_list
   include Enumerable
@@ -59,11 +53,10 @@ class Doble_list
       aux.value
    end
    def each
-     yield @ini
-     nodo=@ini
-     while (nodo != @fin)
-     nodo=nodo.next
-     yield nodo
+     aux=@ini
+     while (aux != nil)
+      yield aux.value
+        aux=aux.next
      end
    end
    

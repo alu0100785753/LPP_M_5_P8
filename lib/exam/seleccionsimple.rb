@@ -8,6 +8,9 @@ class Examen
   def <=>(other)
     @dificultad<=>other.dificultad
   end
+  def ==(other)
+    @pregunta==other.pregunta
+  end
   def get_pregunta()
     return @pregunta
   end

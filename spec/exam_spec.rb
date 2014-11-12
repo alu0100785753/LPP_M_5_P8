@@ -147,42 +147,59 @@ end
 
 		before :all do
 			@preg1= Examen.new("\nCual es el resultado de sumar 2 y 5?",[4,5,6, "ninguna de las anteriores"])
-			@preg2= Examen.new("\nCual es el resultado de sumar 5 y 2?",[4,5,6, "ninguna de las anteriores"])
+			@preg2= Examen.new("\nCual es el resultado de sumar 2 y 5?",[4,5,6, "ninguna de las anteriores"])
 			@preg3= Vof.new("\nEs 7 el resultado de sumar 2 y 5?")
+			@preg4= Vof.new("\nAprobaras lpp?")
 			@preg1.dificultad=2
 			@preg2.dificultad=2
 			@preg3.dificultad=1
+			@preg4.dificultad=10
 		end
 		describe "comparando preguntas" do
-			it "pregunta igual" do
-				print "debe dar 0: "
-				puts @preg1<=>@preg2 
+			
+			it "la pregunta 1 es igual a la pregunta 2" do
+					expect(@preg1==@preg2).to eq(true) 
 			end
-			it "pregunta menor" do
-				print "debe dar -1: "
-				puts @preg3<=>@preg2 
+			it "la pregunta 1 es igual a la pregunta 3" do
+					expect(@preg1==@preg3).to eq(false) 
 			end
-			it "pregunta mayor" do
-				print "debe dar +1: "
-				puts @preg2<=>@preg3
+			it "la pregunta 3 es menor que la pregunta 2" do
+					expect(@preg3<@preg2).to eq(true) 
+			end
+			it "la pregunta 2 es mayor que la pregunta 3" do
+					expect(@preg2>@preg3).to eq(true) 
+			end
+			it "la pregunta 2 es mayor o igual que la pregunta 3" do
+					expect(@preg2>=@preg3).to eq(true) 
+			end
+			it "la pregunta 2 es menor o igual que la pregunta 1" do
+					expect(@preg2<=@preg1).to eq(true) 
 			end
 		end
 		
-		describe Doble_list do
+#		describe Doble_list do
 			
 			before :all do
 				@lista= Doble_list.new
-				@lista.push_ini(1)
-				@lista.push_ini(2)
-				@lista.push_ini(3)
-				@lista.push_ini(4)
+				@lista.push_ini(@preg1)
+				@lista.push_ini(@preg2)
+				@lista.push_ini(@preg3)
+				@lista.push_ini(@preg4)
 			end
 		
 		describe "Probando el enumerable" do
-				it "funciona enumerable" do
-					puts "la lista es: "
-					@lista.each{|nodo| puts nodo.value}
+				it "funciona maximo" do
+					expect(@lista.max).to eq(@preg4)
+				end
+				it "funciona minimo" do
+					expect(@lista.min).to eq(@preg2) #tiene que tirar un error porque el minimo es @preg3.
+				end
+				it "funciona minimo" do
+					expect(@lista.min).to eq(@preg3)
+				end
+				it "funciona all" do
+					expect(@lista.all?).to eq(true)
 				end
 			end
 		end
-end
+#end
