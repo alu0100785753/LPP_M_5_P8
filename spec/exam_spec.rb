@@ -213,8 +213,31 @@ describe Examen do
 		@exam.add_pregunta(@pregunta1)
 		@exam.add_pregunta(@pregunta2)
 		
-			
+	def @exam.resolver
+				preg_actual=0
+				preg_correctas=0
+					while preg_actual<@npreguntas
+						preg_actual=preg_actual+1
+						puts @exam.get_ini().pregunta
+						puts @exam.get_ini().respuesta
+						puts ""
+						#STDOUT.flush
+						#res=$stdin.flush
+						res = gets.chomp
+						#res=$stdin.flush
+						
+						if @exam.get_ini().resp_correcta(res)
+							preg_correctas=preg_correctas+1
+						end
+						@exam.pop()
+						puts""
+					end
+					print "Ha respondido bien "
+						print preg_correctas
+						print " preguntas de "
+						print @npreguntas
 	end
+end
 	
 	describe "probando clase examen"do
 		it "se inserta bien la pregunta" do
@@ -230,4 +253,13 @@ describe Examen do
 			@exam.exam.get_ini().correcta.should eq('ninguna de las anteriores')
 		end
 	end
+	
+	describe "resolver el examen" do
+		it "resolviendo examen" do
+			@exam.resolver
+			@exam.add_pregunta(@pregunta1)
+		@exam.add_pregunta(@pregunta2)
+		end
+	end
+	
 end
