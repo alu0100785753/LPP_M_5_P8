@@ -31,4 +31,8 @@ TODO: Write usage instructions here
 5. Create a new Pull Request
 
 
+[![Build Status](https://travis-ci.org/alu0100785753/LPP_M_5_P8.svg?branch=master)](https://travis-ci.org/alu0100785753/LPP_M_5_P8)
+
+[![Coverage Status](https://coveralls.io/repos/alu0100785753/LPP_M_5_P8/badge.png?branch=master)](https://coveralls.io/r/alu0100785753/LPP_M_5_P8?branch=master)
+
 #alu0100763249 confirmo que he entrado en la práctica nº7

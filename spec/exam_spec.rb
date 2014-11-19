@@ -213,7 +213,7 @@ describe Examen do
 		@exam.add_pregunta(@pregunta1)
 		@exam.add_pregunta(@pregunta2)
 		
-	def @exam.resolver
+	def @exam.resolver(resp)
 				preg_actual=0
 				preg_correctas=0
 					while preg_actual<@npreguntas
@@ -223,10 +223,10 @@ describe Examen do
 						puts ""
 						#STDOUT.flush
 						#res=$stdin.flush
-						res = gets.chomp
+						#res = gets.chomp
 						#res=$stdin.flush
 						
-						if @exam.get_ini().resp_correcta(res)
+						if @exam.get_ini().resp_correcta(resp[preg_actual-1])
 							preg_correctas=preg_correctas+1
 						end
 						@exam.pop()
@@ -236,6 +236,7 @@ describe Examen do
 						print preg_correctas
 						print " preguntas de "
 						print @npreguntas
+						return preg_correctas
 	end
 end
 	
@@ -256,9 +257,9 @@ end
 	
 	describe "resolver el examen" do
 		it "resolviendo examen" do
-			@exam.resolver
+			@exam.resolver(['2','falso']).should eq(1)
 			@exam.add_pregunta(@pregunta1)
-		@exam.add_pregunta(@pregunta2)
+			@exam.add_pregunta(@pregunta2)
 		end
 	end
 	
