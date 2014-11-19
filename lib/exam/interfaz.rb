@@ -6,6 +6,6 @@ class Interfaz
     end
     
     def mostrar_pregunta
-       puts @examen.exam.get_ini().pregunta 
+       puts @examen.exam.get_ini().pregunta
     end
 end
