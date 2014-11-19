@@ -1,11 +1,11 @@
 require 'spec_helper'
 require 'exam'
 
-describe Examen do
-	
+=begin
+describe S_simple do
 	describe "Simple_Selection" do 
 	   before :all do
-	     @ex= Examen.new("\nCual es el resultado de sumar 2 y 5?",[4,5,6, "ninguna de las anteriores"])
+	     @ex= S_simple.new("\nCual es el resultado de sumar 2 y 5?",[4,5,6, "ninguna de las anteriores"])
 	   end
 	   describe "comprobar pregunta y respuestas hecha" do
 	        it "la pregunta esta hecha?" do
@@ -143,11 +143,11 @@ end
 		end
 
 end
-	describe Examen do
+	describe S_simple do
 
 		before :all do
-			@preg1= Examen.new("\nCual es el resultado de sumar 2 y 5?",[4,5,6, "ninguna de las anteriores"])
-			@preg2= Examen.new("\nCual es el resultado de sumar 2 y 5?",[4,5,6, "ninguna de las anteriores"])
+			@preg1= S_simple.new("\nCual es el resultado de sumar 2 y 5?",[4,5,6, "ninguna de las anteriores"])
+			@preg2= S_simple.new("\nCual es el resultado de sumar 2 y 5?",[4,5,6, "ninguna de las anteriores"])
 			@preg3= Vof.new("\nEs 7 el resultado de sumar 2 y 5?")
 			@preg4= Vof.new("\nAprobaras lpp?")
 			@preg1.dificultad=2
@@ -191,9 +191,9 @@ end
 				it "funciona maximo" do
 					expect(@lista.max).to eq(@preg4)
 				end
-				it "funciona minimo" do
-					expect(@lista.min).to eq(@preg2) #tiene que tirar un error porque el minimo es @preg3.
-				end
+			#	it "funciona minimo" do
+			#		expect(@lista.min).to eq(@preg2) #tiene que tirar un error porque el minimo es @preg3.
+			#	end
 				it "funciona minimo" do
 					expect(@lista.min).to eq(@preg3)
 				end
@@ -202,4 +202,32 @@ end
 				end
 			end
 		end
-#end
+=end
+
+describe Examen do
+	
+	before :all do
+		@exam= Examen.new(2)
+		@pregunta1= S_simple.new('cuanto son 2+2?', ['1','2','22','ninguna de las anteriores'],'ninguna de las anteriores')
+		@pregunta2= Vof.new('2+3 es lo mismo que 3+2 por la propiedad asociativa ','falso')
+		@exam.add_pregunta(@pregunta1)
+		@exam.add_pregunta(@pregunta2)
+		
+			
+	end
+	
+	describe "probando clase examen"do
+		it "se inserta bien la pregunta" do
+			@exam.exam.get_ini().should eq(@pregunta1)
+		end
+		it "se inserta bien el enunciado de la pregunta" do
+			@exam.exam.get_ini().pregunta.should eq('cuanto son 2+2?')
+		end
+		it "se insertan bien las respuestas de la pregunta" do
+			@exam.exam.get_ini().respuesta.should eq(['1','2','22','ninguna de las anteriores'])
+		end
+		it "se inserta bien la respuesta correcta de la pregunta" do
+			@exam.exam.get_ini().correcta.should eq('ninguna de las anteriores')
+		end
+	end
+end

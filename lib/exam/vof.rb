@@ -1,7 +1,8 @@
-class Vof < Examen
-    attr_accessor :pregunta, :respuestas
-    def initialize(pre)
+class Vof < S_simple
+   # attr_accessor :pregunta, :respuestas
+    def initialize(pre,cor)
         @pregunta=pre
-        @respuestas=['verdadero','falso']
+        @respuesta=['verdadero','falso']
+        @correcta=cor
     end
 end
