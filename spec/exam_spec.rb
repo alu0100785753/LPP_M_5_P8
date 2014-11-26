@@ -239,6 +239,28 @@ describe Examen do
 						return preg_correctas
 	end
 	
+	def @exam.resolver_inverso(resp)
+				preg_actual=0
+				preg_correctas=0
+					while preg_actual<@npreguntas
+						preg_actual=preg_actual+1
+						puts @exam.get_valor_n(preg_actual).pregunta
+						puts @exam.get_valor_n(preg_actual).respuesta
+						puts ""
+						
+						if @exam.get_valor_n(preg_actual).resp_correcta(resp[preg_actual-1])
+							preg_correctas=preg_correctas+1
+						end
+						#@exam.pop_fin()
+						puts""
+					end
+					print "Ha respondido bien "
+						print preg_correctas
+						print " preguntas de "
+						print @npreguntas
+						puts""
+						return preg_correctas
+	end
 end
 
 
@@ -263,6 +285,11 @@ end
 			@exam.resolver(['2','falso']).should eq(1)
 			@exam.add_pregunta(@pregunta1)
 			@exam.add_pregunta(@pregunta2)
+		end
+		
+		it "resolviendo inverso" do
+			puts "resolviendo inverso"
+			@exam.resolver_inverso(['falso','2']).should eq(1)
 		end
 	end
 
