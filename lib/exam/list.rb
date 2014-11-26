@@ -33,4 +33,5 @@ class List
   def get_ini
     return @ini.value
   end
+
 end

@@ -22,10 +22,11 @@ class Doble_list
     if lista_vacia==true
       @ini= Node2.new(elemento,nil,nil)
       @fin= @ini
-    elsif
+    else if @ini==@fin
       nuevo= Node2.new(elemento,@ini,nil)
-      #@ini.prev= nuevo
+      @fin.prev= nuevo
       @ini=nuevo
+    end
     end
   end
   def push_fin(elemento)
@@ -33,11 +34,24 @@ class Doble_list
     if lista_vacia==true
       @fin= Node2.new(elemento,nil,nil)
       @ini= @fin
-    elsif
+    else if @fin==@ini
       nuevo= Node2.new(elemento, nil, @fin)
-      #@fin.next= nuevo
+      @fin=nuevo
+      @ini.next= @fin
+    elsif 
+      nuevo= Node2.new(elemento, nil, @fin)
+      #@ini.next= nuevo
       @fin=nuevo
     end
+    end
+  end
+  
+  def get_ini
+    return @ini.value
+  end
+  
+  def get_fin
+    return @fin.value
   end
   
   def pop_ini
@@ -59,5 +73,13 @@ class Doble_list
         aux=aux.next
      end
    end
-   
+   def get_valor_n(n)
+    cont=1
+    aux=@fin
+    while cont!=n do 
+      aux=aux.prev
+      cont=cont+1
+    end
+    return aux.value
+  end
 end

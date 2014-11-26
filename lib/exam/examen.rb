@@ -2,12 +2,12 @@ class Examen
 
  attr_accessor :exam, :npreguntas
     def initialize(n)
-      @exam= List.new
+      @exam= Doble_list.new
       @npreguntas=n
     end
    
     def add_pregunta(pre)
-        @exam.push(pre)
+        @exam.push_fin(pre)
     end
    
 end

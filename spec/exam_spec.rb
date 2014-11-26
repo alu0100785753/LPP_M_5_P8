@@ -210,8 +210,11 @@ describe Examen do
 		@exam= Examen.new(2)
 		@pregunta1= S_simple.new('cuanto son 2+2?', ['1','2','22','ninguna de las anteriores'],'ninguna de las anteriores')
 		@pregunta2= Vof.new('2+3 es lo mismo que 3+2 por la propiedad asociativa ','falso')
+		#@pregunta3=Vof.new('pene','falso')
 		@exam.add_pregunta(@pregunta1)
 		@exam.add_pregunta(@pregunta2)
+		#@exam.add_pregunta(@pregunta3)
+		
 		
 	def @exam.resolver(resp)
 				preg_actual=0
@@ -221,25 +224,25 @@ describe Examen do
 						puts @exam.get_ini().pregunta
 						puts @exam.get_ini().respuesta
 						puts ""
-						#STDOUT.flush
-						#res=$stdin.flush
-						#res = gets.chomp
-						#res=$stdin.flush
 						
 						if @exam.get_ini().resp_correcta(resp[preg_actual-1])
 							preg_correctas=preg_correctas+1
 						end
-						@exam.pop()
+						@exam.pop_ini()
 						puts""
 					end
 					print "Ha respondido bien "
 						print preg_correctas
 						print " preguntas de "
 						print @npreguntas
+						puts ""
 						return preg_correctas
 	end
-end
 	
+end
+
+
+
 	describe "probando clase examen"do
 		it "se inserta bien la pregunta" do
 			@exam.exam.get_ini().should eq(@pregunta1)
@@ -262,5 +265,5 @@ end
 			@exam.add_pregunta(@pregunta2)
 		end
 	end
-	
+
 end
