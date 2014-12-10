@@ -314,4 +314,24 @@ describe Cuestionario do
       verdadero => 'Falso'
 }
 end
+
+describe "probando preguntas" do
+	it "Enunciado pregunta 1" do
+
+		@cuest.get_p(0).texto.should eq('¿Cuantos argumentos de tipo bloque puede recibir un metodo?')
+	end
+	it "Enunciado pregunta 2" do
+		@cuest.get_p(1).texto.should eq("En Ruby los bloques son objetos que continen codigo")
+	end
+end
+
+describe "probando respuestas" do
+	it "Respuesta 1" do
+		@cuest.get_p(0).respuestas[0].verofal?.should eq(false)
+	end
+	it "Respuesta 1" do
+		@cuest.get_p(1).respuestas[1].verofal?.should eq(true)
+	end
+end
+
 end
