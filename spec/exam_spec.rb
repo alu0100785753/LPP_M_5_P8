@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 require 'spec_helper'
 require 'exam'
 #require 'Cuest'
@@ -300,18 +302,16 @@ describe Cuestionario do
 	
 	before :all do
 		
-		@quiz=File.open(Cuest.rb).read
-		@quiz= <<"CUESTIONARIO"
-		require './P_Cuest'
-
-  Cuestionario.new() do
-    #{cuestionario}
-  end
-CUESTIONARIO
-	end
-	
-	it "pregunta1" do
-		
-	end
-	
+@cuest= Cuestionario.new("Lenguajes y Paradigmas de la Programación"){
+	pregunta '¿Cuantos argumentos de tipo bloque puede recibir un metodo?',
+      falso =>'2',
+      verdadero =>'1',
+      falso =>'Muchos',
+      falso =>'Los que defina el usuario'
+    
+    pregunta "En Ruby los bloques son objetos que continen codigo",
+      falso => 'Cierto',
+      verdadero => 'Falso'
+}
+end
 end
