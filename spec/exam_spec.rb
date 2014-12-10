@@ -1,6 +1,6 @@
 require 'spec_helper'
 require 'exam'
-
+#require 'Cuest'
 =begin
 describe S_simple do
 	describe "Simple_Selection" do 
@@ -202,7 +202,7 @@ end
 				end
 			end
 		end
-=end
+
 
 describe Examen do
 	
@@ -292,5 +292,26 @@ end
 			@exam.resolver_inverso(['falso','2']).should eq(1)
 		end
 	end
+end
 
+=end
+
+describe Cuestionario do
+	
+	before :all do
+		
+		@quiz=File.open(Cuest.rb).read
+		@quiz= <<"CUESTIONARIO"
+		require './P_Cuest'
+
+  Cuestionario.new() do
+    #{cuestionario}
+  end
+CUESTIONARIO
+	end
+	
+	it "pregunta1" do
+		
+	end
+	
 end
