@@ -53,3 +53,4 @@ Cuestionario
   def get_p(n)
     return preguntas[n]
   end
+end
