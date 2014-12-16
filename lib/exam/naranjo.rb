@@ -9,5 +9,10 @@ class Naranjo
         @naranjas=0
     end
     
+    def uno_mas
+        
+       @edad=@edad+1
+       @altura=@altura+0.5
+    end
 
 end
