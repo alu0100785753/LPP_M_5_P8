@@ -10,28 +10,38 @@ class Naranjo
         @vivo=true
     end
     
-    def uno_mas
-        if @vivo == true
-            @edad=@edad+1
-            @altura=@altura+0.5
-            @naranjas=0 #Las naranjas viejas se caen del arbol
-        
-            if @altura > 10 && rand(2) > 0 #el arbol muere
-                @vivo=false
-                puts "El árbol ha muerto"
-            elsif @altura > 2 #crecen nuevas naranjas
-                @naranjas= (@altura*15 -25).to_i
-                puts "Este año, el árbol mide #{@altura} metros y ha dado #{@naranjas} naranjas"
+    def uno_mas(i)
+        j=0
+        while (i>j)
+            if @vivo == true
+                @edad=@edad+1
+                @altura=@altura+0.5
+                @naranjas=0 #Las naranjas viejas se caen del arbol
+            
+                if @altura > 10 && rand(2) > 0 #el arbol muere
+                    @vivo=false
+                    puts "El árbol ha muerto"
+                elsif @altura > 2 #crecen nuevas naranjas
+                    @naranjas= (@altura*15 -25).to_i
+                    puts "Este año, el árbol mide #{@altura} metros y ha dado #{@naranjas} naranjas"
+                else
+                    puts "Este año, el árbol mide #{@altura} metros, pero es demasiado joven para dar naranjas"
+                end
             else
-                puts "Este año, el árbol mide #{@altura} metros, pero es demasiado joven para dar naranjas"
+                puts "El arbol sigue muerto"
             end
-        else
-            puts "El arbol sigue muerto"
+            
+            j=j+1
+            sleep(1)
         end
     end
     
-    def recolectar_una
+    def recolectar_una(n)
         
+        m=0
+        
+        while (n>m)
+    
        if @vivo == true
            if @naranjas >0
                @naranjas= @naranjas-1
@@ -42,6 +52,9 @@ class Naranjo
         else
             puts "El árbol está muerto"
         end
+        m=m+1
+        sleep(2)
+        end
+    
     end
-
 end

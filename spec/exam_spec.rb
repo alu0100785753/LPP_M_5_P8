@@ -349,7 +349,11 @@ describe Naranjo do
 	@t1=Thread.new{@naranjo4.uno_mas(5)}
 	@t2=Thread.new{@naranjo4.recolectar_una(5)}
 	
-	5.times{@naranjo3.uno_mas}
+	@t1.join
+	@t2.join
+	#@naranjo3.uno_mas(5)
+	@naranjo3.naranjas=12
+	#5.times{@naranjo3.uno_mas}
 	end
 
 	describe "pruebas" do
@@ -369,12 +373,12 @@ describe Naranjo do
 			
 		end
 			it "sumando un año" do
-				@naranjo2.uno_mas
+				@naranjo2.uno_mas(1)
 				@naranjo2.altura.should eq(0.5)
 				@naranjo2.edad.should eq(1)
 		end
 		it "recolectar_una" do
-			@naranjo3.recolectar_una
+			@naranjo3.recolectar_una(1)
 			@naranjo3.naranjas.should eq(11)
 		end
 	end
