@@ -360,6 +360,12 @@ describe Naranjo do
 		end
 		it "altura" do
 			@naranjo.altura.should eq(0)
+			
+			it "sumando un año" do
+				@naranjo.uno_mas
+				@naranjo.altura.should eq(0.5)
+				@naranjo.edad.should eq(1)
+			end
 		end
 	end
 end

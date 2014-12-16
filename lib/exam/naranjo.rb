@@ -8,4 +8,6 @@ class Naranjo
         @altura=0
         @naranjas=0
     end
+    
+
 end
