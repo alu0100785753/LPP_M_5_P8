@@ -374,7 +374,7 @@ describe Naranjo do
 		end
 		it "recolectar_una" do
 			@naranjo3.recolectar_una
-			@naranjas.naranjas.should eq(1)
+			@naranjo.naranjas.should eq(1)
 		end
 	end
 end
