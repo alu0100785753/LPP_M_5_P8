@@ -8,7 +8,7 @@ require "exam/interfaz"
 require "exam/Pregunta"
 require "exam/Respuesta"
 require "exam/Cuestionario"
-
+require "exam/naranjo"
 
 
 module Exam
