@@ -344,11 +344,12 @@ describe Naranjo do
 	@naranjo=Naranjo.new
 	@naranjo2=Naranjo.new
 	@naranjo3=Naranjo.new
+	@naranjo4=Naranjo.new
 	
-	@naranjo3.uno_mas
-	@naranjo3.uno_mas	
-	@naranjo3.uno_mas
+	@t1=Thread.new{@naranjo4.uno_mas(5)}
+	@t2=Thread.new{@naranjo4.recolectar_una(5)}
 	
+	5.times{@naranjo3.uno_mas}
 	end
 
 	describe "pruebas" do
@@ -374,7 +375,7 @@ describe Naranjo do
 		end
 		it "recolectar_una" do
 			@naranjo3.recolectar_una
-			@naranjo.naranjas.should eq(1)
+			@naranjo3.naranjas.should eq(11)
 		end
 	end
 end
