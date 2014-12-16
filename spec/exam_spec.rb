@@ -342,7 +342,13 @@ describe Naranjo do
 	before :all do
 		
 	@naranjo=Naranjo.new
-		
+	@naranjo2=Naranjo.new
+	@naranjo3=Naranjo.new
+	
+	@naranjo3.uno_mas
+	@naranjo3.uno_mas	
+	@naranjo3.uno_mas
+	
 	end
 
 	describe "pruebas" do
@@ -362,9 +368,13 @@ describe Naranjo do
 			
 		end
 			it "sumando un año" do
-				@naranjo.uno_mas
-				@naranjo.altura.should eq(0.5)
-				@naranjo.edad.should eq(1)
+				@naranjo2.uno_mas
+				@naranjo2.altura.should eq(0.5)
+				@naranjo2.edad.should eq(1)
+		end
+		it "recolectar_una" do
+			@naranjo3.recolectar_una
+			@naranjas.naranjas.should eq(1)
 		end
 	end
 end
