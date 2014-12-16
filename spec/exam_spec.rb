@@ -351,7 +351,16 @@ describe Naranjo do
 			@naranjo.class.to_s.should eq("Naranjo")	
 			
 		end
-	
+		it "años" do
+			
+			@naranjo.edad.should eq(0)
+		end
+		it "naranjas" do
+			@naranjo.naranjas.should eq(0)
+		end
+		it "altura" do
+			@naranjo.altura.should eq(0)
+		end
 	end
 end
 
