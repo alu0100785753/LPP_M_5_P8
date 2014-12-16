@@ -348,7 +348,7 @@ describe Naranjo do
 
 	describe "pruebas" do
 		it "clase naranjo" do
-			@naranjo.class.to_s.should eq(Naranjo)	
+			@naranjo.class.to_s.should eq("Naranjo")	
 			
 		end
 	
