@@ -346,6 +346,12 @@ describe Naranjo do
 		
 	end
 
+	describe "pruebas" do
+		it "clase naranjo" do
+			@naranjo.class.to_s.should eq(Naranjo)	
+			
+		end
 	
+	end
 end
 
