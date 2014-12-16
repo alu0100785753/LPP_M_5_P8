@@ -335,3 +335,17 @@ describe "probando respuestas" do
 end
 
 end
+
+
+describe Naranjo do
+	
+	before :all do
+		
+	@naranjo=Naranjo.new
+
+		
+	end
+
+	
+end
+
