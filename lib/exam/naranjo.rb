@@ -12,6 +12,7 @@ class Naranjo
     
     def uno_mas(i)
         j=0
+        mutex=Mutex.new
         while (i>j)
             if @vivo == true
                 @edad=@edad+1
@@ -22,7 +23,9 @@ class Naranjo
                     @vivo=false
                     puts "El árbol ha muerto"
                 elsif @altura > 2 #crecen nuevas naranjas
+                    mutex.lock
                     @naranjas= (@altura*15 -25).to_i
+                    mutex.unlock
                     puts "Este año, el árbol mide #{@altura} metros y ha dado #{@naranjas} naranjas"
                 else
                     puts "Este año, el árbol mide #{@altura} metros, pero es demasiado joven para dar naranjas"
@@ -39,12 +42,14 @@ class Naranjo
     def recolectar_una(n)
         
         m=0
-        
+        mutex1=Mutex.new
         while (n>m)
     
        if @vivo == true
            if @naranjas >0
+               mutex1.lock
                @naranjas= @naranjas-1
+               mutex1.unlock
                puts "¡¡La naranja estaba deliciosa!! quedan #{@naranjas} naranjas"
            else
                puts "El árbol no tiene naranjas"

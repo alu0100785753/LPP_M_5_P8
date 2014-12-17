@@ -362,7 +362,6 @@ describe Naranjo do
 			
 		end
 		it "años" do
-			
 			@naranjo.edad.should eq(0)
 		end
 		it "naranjas" do
